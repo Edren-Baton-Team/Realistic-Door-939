@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33110.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Realistic Door 939", "Realistic Door 939\Realistic Door 939.csproj", "{EEF33F70-EC88-4228-B5D5-E96E25609656}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EEF33F70-EC88-4228-B5D5-E96E25609656}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEF33F70-EC88-4228-B5D5-E96E25609656}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EEF33F70-EC88-4228-B5D5-E96E25609656}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EEF33F70-EC88-4228-B5D5-E96E25609656}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1104AFA4-CD3E-4F84-8A61-18C957C55019}
+	EndGlobalSection
+EndGlobal
