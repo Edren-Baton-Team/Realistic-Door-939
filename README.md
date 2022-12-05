@@ -1,4 +1,5 @@
-### Realistic-Door-939-RP
+### Realistic-Door-939
+Allows you to knock out the door in random cases
 ### Default Config:
 ```xml
 Realistic Destroys Door 939:
