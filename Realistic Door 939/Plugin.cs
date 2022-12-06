@@ -32,14 +32,8 @@ namespace Realistic_Door_939.Plugin
             if (!ev.Door.IsKeycardDoor && ev.Player.Role.Type.Is939() && !time939.Contains(Id))
             {
                 if (UnityEngine.Random.Range(0, 100) > Config.Chance)
-                {
-                    time939.Add(Id);
                     ev.Door.BreakDoor();
-                }
-                else
-                {
-                    time939.Add(Id);
-                }
+                time939.Add(Id);
                 Timing.CallDelayed(Config.Timing, () => { time939.Remove(Id); });
             }
         }
