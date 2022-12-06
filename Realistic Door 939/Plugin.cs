@@ -8,11 +8,11 @@ namespace Realistic_Door_939.Plugin
     public class Plugin : Plugin<Config>
     {
         public override string Author => "Rysik5318";
-        public override string Name => "Realistic Destroys Door 939";
-        public override string Prefix => "Realistic Destroys Door 939";
-        public override System.Version Version => new System.Version(1, 0, 0);
+        public override string Name => "Realistic939";
+        public override string Prefix => "Realistic939";
+        public override System.Version Version => new System.Version(1, 0, 1);
         public static Plugin Singleton;
-        public List<string> time939 = new List<string>();
+        public List<Player> BreakingDoorCooldownedPlayers = new List<Player>();
         public override void OnEnabled()
         {
             Singleton = this;
@@ -28,13 +28,12 @@ namespace Realistic_Door_939.Plugin
 
         public void OnInteractingDoor(InteractingDoorEventArgs ev)
         {
-            string Id = ev.Player.UserId;
-            if (!ev.Door.IsKeycardDoor && ev.Player.Role.Type.Is939() && !time939.Contains(Id))
+            if (!ev.Door.IsKeycardDoor && ev.Player.Role.Type.Is939() && !BreakingDoorCooldownedPlayers.Contains(ev.Player))
             {
-                if (UnityEngine.Random.Range(0, 100) > Config.Chance)
+                if (UnityEngine.Random.Range(0, 100) >= Config.Chance)
                     ev.Door.BreakDoor();
-                time939.Add(Id);
-                Timing.CallDelayed(Config.Timing, () => { time939.Remove(Id); });
+                BreakingDoorCooldownedPlayers.Add(ev.Player);
+                Timing.CallDelayed(Config.Timing, () => BreakingDoorCooldownedPlayers.Remove(ev.Player));
             }
         }
     }
