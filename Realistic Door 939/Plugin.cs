@@ -10,7 +10,7 @@ namespace Realistic_Door_939.Plugin
         public override string Author => "Rysik5318";
         public override string Name => "Realistic939";
         public override string Prefix => "Realistic939";
-        public override System.Version Version => new System.Version(1, 0, 1);
+        public override System.Version Version => new System.Version(1, 0, 2);
         public static Plugin Singleton;
         public List<Player> BreakingDoorCooldownedPlayers = new List<Player>();
         public override void OnEnabled()
@@ -30,10 +30,10 @@ namespace Realistic_Door_939.Plugin
         {
             if (!ev.Door.IsKeycardDoor && ev.Player.Role.Type.Is939() && !BreakingDoorCooldownedPlayers.Contains(ev.Player))
             {
-                if (UnityEngine.Random.Range(0, 100) >= Config.Chance)
+                if (UnityEngine.Random.Range(0, 100) <= Config.BreakingDoorChance)
                     ev.Door.BreakDoor();
                 BreakingDoorCooldownedPlayers.Add(ev.Player);
-                Timing.CallDelayed(Config.Timing, () => BreakingDoorCooldownedPlayers.Remove(ev.Player));
+                Timing.CallDelayed(Config.Cooldown, () => BreakingDoorCooldownedPlayers.Remove(ev.Player));
             }
         }
     }
